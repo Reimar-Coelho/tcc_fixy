@@ -26,7 +26,7 @@ function Navbar() {
 
     return ( 
         <nav>
-            <ul className='text-lg flex gap-3 ml-3 text-white'>
+            <ul className='text-lg flex gap-3 ml-3 text-white flex-wrap'>
                 <li className={`${location.pathname === '/' ? 'border-b-2 px-2 border-yellow-500 text-yellow-500 hover:tracking-widest transition-all ' : 'border-b-2 px-2 border-yellow-500  hover:tracking-widest transition-all'}`}>
                     <Link to = "/">HOME</Link>
                 </li>
