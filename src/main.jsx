@@ -15,6 +15,8 @@ import EscolhaLogin from './Pages/EscolhaLogin.jsx'
 import Cadastro from './Pages/Cadastro.jsx'
 import CadastroAfiliado from './Pages/CadastroAfiliado.jsx'
 import Notes from './Pages/Notes.jsx'
+import AddNote from './Pages/add-note.jsx'
+import UpdateNote from './Pages/note.jsx'
 
 
 const router = createBrowserRouter(
@@ -32,6 +34,8 @@ const router = createBrowserRouter(
         {path: "cadastro", element: <Cadastro/>},
         {path: "cadastroParceiro", element: <CadastroAfiliado/>},
         {path: "notes", element: <Notes/>},
+        {path: "add-note", element: <AddNote/>},
+        {path: "note/:id", element: <UpdateNote/>},
         {path: "*", element: <PageNotFound/>}
       ]
     }
