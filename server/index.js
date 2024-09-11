@@ -3,6 +3,7 @@ const cors = require("cors");
 const express = require("express");
 const connectDB = require("./connectDB");
 const Notes = require("./models/Notes");
+const Clientes = require("./models/Clientes");
 
 const app = express();
 const PORT = process.env.PORT || 8000;
@@ -23,7 +24,7 @@ app.get("/api/notes", async (req, res) => {
 
         res.status(201).json(data);
     } catch (error) {
-        res.status(500).json({ error: 'An error occured' });
+        res.status(500).json({ error: 'An error occurred' });
     }
 });
 
@@ -40,7 +41,7 @@ app.get("/api/notes/:id", async (req, res) => {
 
         res.status(201).json(data);
     } catch (error) {
-        res.status(500).json({ error: 'An error occured' });
+        res.status(500).json({ error: 'An error occurred' });
     }
 });
 
@@ -58,7 +59,7 @@ app.post("/api/notes", async (req, res) => {
 
         res.status(201).json(data);
     } catch (error) {
-        res.status(500).json({ error: 'An error occured' });
+        res.status(500).json({ error: 'An error occurred' });
     }
 });
 
@@ -77,7 +78,7 @@ app.put("/api/notes/:id", async (req, res) => {
 
         res.status(201).json(data);
     } catch (error) {
-        res.status(500).json({ error: 'An error occured' });
+        res.status(500).json({ error: 'An error occurred' });
     }
 });
 
@@ -95,9 +96,84 @@ app.delete("/api/notes/:id", async (req, res) => {
 
         res.status(201).json(data);
     } catch (error) {
-        res.status(500).json({ error: 'An error occured' });
+        res.status(500).json({ error: 'An error occurred' });
     }
 });
+
+//Get all Clientes
+app.get("/api/clientes", async (req, res) => {
+    try{
+        const data = await Clientes.find({});
+
+        if(!data) {
+            throw new Error("No data found");
+        }
+
+        res.status(201).json(data);
+    } catch (error) {
+        res.status(500).json({ error: 'An error occurred' });
+    }
+});
+
+
+//Create a Cliente
+app.post("/api/clientes", async (req, res) => {
+    try{
+        
+        const { email, nome, endereco, complemento, cidade, senha } = req.body;
+
+        const data = await Clientes.create({email, nome, endereco, complemento, cidade, senha});
+
+        if(!data) {
+            throw new Error("No data found");
+        }
+
+        res.status(201).json(data);
+    } catch (error) {
+        res.status(500).json({ error: 'An error occurred' });
+    }
+
+});
+
+//Delete a Cliente by Id
+app.delete("/api/clientes/:id", async (req, res) => {
+    try{
+        const clienteId = req.params.id;
+        
+
+        const data = await Clientes.findByIdAndDelete(clienteId);
+
+        if(!data) {
+            throw new Error("No data found");
+        }
+
+        res.status(201).json(data);
+    } catch (error) {
+        res.status(500).json({ error: 'An error occurred' });
+    }
+
+    
+});
+
+//Update a Cliente
+app.put("/api/clientes/:id", async (req, res) => {
+    try{
+        const clienteId = req.params.id;
+        
+        const { email, nome, endereco, complemento, cidade, senha } = req.body;
+
+        const data = await Clientes.findByIdAndUpdate(clienteId, {email, nome, endereco, complemento, cidade, senha});
+
+        if(!data) {
+            throw new Error("No data found");
+        }
+
+        res.status(201).json(data);
+    } catch (error) {
+        res.status(500).json({ error: 'An error occurred' });
+    }
+});
+
 
 
 app.get("/", (req, res) => {
