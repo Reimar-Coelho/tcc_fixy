@@ -14,6 +14,7 @@ import LoginAfiliado from './Pages/LoginAfiliado.jsx'
 import EscolhaLogin from './Pages/EscolhaLogin.jsx'
 import Cadastro from './Pages/Cadastro.jsx'
 import CadastroAfiliado from './Pages/CadastroAfiliado.jsx'
+import Notes from './Pages/Notes.jsx'
 
 
 const router = createBrowserRouter(
@@ -30,6 +31,7 @@ const router = createBrowserRouter(
         {path: "escolhaLogin", element: <EscolhaLogin/>},
         {path: "cadastro", element: <Cadastro/>},
         {path: "cadastroParceiro", element: <CadastroAfiliado/>},
+        {path: "notes", element: <Notes/>},
         {path: "*", element: <PageNotFound/>}
       ]
     }
