@@ -1,7 +1,18 @@
 import loginImg from '../assets/login2.png'
 import { Link } from 'react-router-dom'
+import React, {useState, useEffect} from 'react-router-dom'
 
 export default function CadastroAfiliado() {
+
+    const baseUrl = `${import.meta.env.VITE_SERVER_URL}/api/notes`;
+    const [data, setData] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
+    const [error, setError] = useState(null);
+
+    useEffect(()=>{
+        
+    });
+
     return (
         <div className='grid grid-cols-1 sm:grid-cols-2 h-screen w-full'>
             <div className='hidden sm:block'>
