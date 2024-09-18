@@ -1,5 +1,5 @@
 import loginImg from '../assets/login.png'
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 
 export default function Cadastro() {
@@ -75,7 +75,7 @@ export default function Cadastro() {
                     </div>
                     <input type="submit" value={submitted ? "Registrando usuário..." : "REGISTRAR"} disabled={submitted} className='w-full my-5 py-2 bg-yellow-500 shadow-lg shadow-yellow-500/50 hover:shadow-yellow-500/40 text-white font-semibold rounded-lg'/>
                     <p className='text-center'>
-                        {submitted && <div className='w-full my-3 py-1 bg-red-500 shadow-lg shadow-red-500/50 hover:shadow-red-500/40 text-white font-semibold rounded-lg'>Usuário criado com sucesso</div>}
+                        {submitted && <div className='w-full my-3 py-1 bg-green-500 shadow-lg shadow-green-500/50 hover:shadow-green-500/40 text-white font-semibold rounded-lg'>Usuário criado com sucesso</div>}
                     </p>
                     
                 </form>
