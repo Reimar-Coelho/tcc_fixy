@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const Schema = mongoose.Schema;
 
-const ClienteSchema = new Schema({
+const AfiliadoSchema = new Schema({
     email: {
         type: String,
         required: true
@@ -22,13 +22,17 @@ const ClienteSchema = new Schema({
         type: String,
         required: true
     },
+    especialidade: {
+        type: String,
+        required: true
+    },
     senha: {
         type: String,
         required: true
     }
 });
 
-ClienteSchema.pre('save', async function(next) {
+AfiliadoSchema.pre('save', async function(next) {
     if (!this.isModified('senha')) {
         return next();
     }
@@ -42,4 +46,4 @@ ClienteSchema.pre('save', async function(next) {
     }
 });
 
-module.exports = mongoose.model('Cliente', ClienteSchema);
+module.exports = mongoose.model('Afiliado', AfiliadoSchema);
