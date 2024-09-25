@@ -33,9 +33,6 @@ const router = createBrowserRouter(
         {path: "escolhaLogin", element: <EscolhaLogin/>},
         {path: "cadastro", element: <Cadastro/>},
         {path: "cadastroParceiro", element: <CadastroAfiliado/>},
-        {path: "notes", element: <Notes/>},
-        {path: "add-note", element: <AddNote/>},
-        {path: "note/:id", element: <UpdateNote/>},
         {path: "*", element: <PageNotFound/>}
       ]
     }
