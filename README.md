@@ -17,14 +17,14 @@ Acesse agora: fixy-repair.com.br
  
 - **ACEDER AO WEBSITE**:
 	- fixy-repair.com.br
-- **CLONAR O REPOSITÓRIO:
+- **CLONAR O REPOSITÓRIO**:
 	- Abra https://github.com/Reimar-Coelho/tcc_fixy
 	- Clone o repositório
   - Na pasta principal crie um documento environment chamado ".env.local"
   - Dentro deste documento escreva "VITE_SERVER_URL=http://localhost:8000"
   - Agora na pasta server, crie um documento environment chamado ".env"
   - Dentro deste documento escreva "MONGODB_URI=mongodb+srv://repairfixy:rHObqYVlo0Qh7Pzn@cluster0.omugf.mongodb.net/Books"
-	- Digite no terminal: npm i
+  - Digite no terminal: npm i
   - Digite no terminal: npm run dev
   - Crie um novo terminal sem fechar o anterior
   - Digite no terminal: cd server
