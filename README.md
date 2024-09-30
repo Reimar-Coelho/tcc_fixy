@@ -12,7 +12,6 @@ Acesse agora: fixy-repair.com.br
 - Front-End: Vite React
 - Scripts: Javascript
 - Design UI/UX: Figma
--
  
 ## Como Rodar o Projeto?
  
