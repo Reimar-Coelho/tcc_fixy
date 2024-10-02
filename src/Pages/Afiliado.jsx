@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
+import useDocumentTitle from '../hook/useDocumentTitle';
 
 function Afiliado() {
+    useDocumentTitle('FIXY - Afiliado')
     return (
         <main className="bg-black min-h-screen text-white">
             {/* Seção de Imagem Principal */}

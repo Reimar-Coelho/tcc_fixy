@@ -4,9 +4,10 @@ import { Link } from 'react-router-dom';
 function Perfil() {
     useDocumentTitle('FIXY - HOME');
 
-    const profileImage = "https://link-da-sua-imagem.com/imagem.jpg"; // Link da imagem de perfil
+    const profileImage = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQikAW3pXN5YXgfLgdGesoC6uPKXkpEsbeSpA&s"; // Link da imagem de perfil
     const nome = "Seu Nome"; // Nome padrão
     const email = "seuemail@exemplo.com"; // Email padrão
+    const endereco = "Rua Exemplo, 123, Bairro, Cidade"; // Endereço padrão
 
     return (
         <main className="bg-black min-h-screen text-white">
@@ -30,6 +31,8 @@ function Perfil() {
                     />
                     <h2 className="text-white text-2xl">{nome}</h2>
                     <p className="text-gray-400">{email}</p>
+                    <p className="text-gray-400">{endereco}</p> {/* Endereço */}
+                    {/* Integre com banco */}
                 </div>
             </section>
 
@@ -51,7 +54,7 @@ function Perfil() {
                         </Link>
                     </div>
                     <div className="bg-gray-800 p-6 rounded-lg shadow-md w-80 h-80 p-2 flex flex-col justify-between">
-                        <h3 className="text-2xl mb-4 ">Cliente</h3>
+                        <h3 className="text-2xl mb-4">Cliente</h3>
                         <p className="mb-4">
                             Para o cliente, é fácil: ele descreve o problema e informa sua 
                             localização no app da Fixy. A plataforma filtra e apresenta 
@@ -62,28 +65,6 @@ function Perfil() {
                             CLIENTE
                         </Link>
                     </div>
-                </div>
-            </section>
-
-            {/* Seção "Solicitação de serviço" */}
-            <section className="py-10 text-center">
-                <h2 className="text-yellow-500 text-3xl mb-8">Solicitação de serviço</h2>
-                <div className="flex flex-col md:flex-row justify-center items-center space-y-6 md:space-y-0 md:space-x-6">
-                    <div className="text-left max-w-md">
-                        <p className="mb-4">
-                            Cadastre-se, descreva o seu problema e informe sua localização. 
-                            Nosso sistema filtrará pedreiros qualificados próximos de você, 
-                            facilitando a contratação do profissional ideal para suas necessidades.
-                        </p>
-                        <Link to="404" className="bg-yellow-500 hover:bg-yellow-400 transition-all text-black py-2 px-4">
-                            Solicitar um serviço
-                        </Link>
-                    </div>
-                    <img 
-                        src="pintor.jpg" 
-                        alt="Worker" 
-                        className="w-full md:w-1/3 h-96 object-cover bg-center opacity-80 rounded"
-                    />
                 </div>
             </section>
         </main>

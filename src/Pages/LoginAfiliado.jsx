@@ -4,7 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import loginImg from '../assets/login2.png';
 
 export default function LoginAfiliado() {
-    useDocumentTitle('FIXY - LOGIN CLIENTE')
+    useDocumentTitle('FIXY - Login Afiliado')
     const [email, setEmail] = useState("");
     const [senha, setSenha] = useState("");
     const [error, setError] = useState("");

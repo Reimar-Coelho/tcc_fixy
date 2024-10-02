@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import loginImg from '../assets/login2.png';
+import useDocumentTitle from '../hook/useDocumentTitle';
 
 export default function CadastroAfiliado() {
+    useDocumentTitle('FIXY - Login Afiliado')
     const baseUrl = `${import.meta.env.VITE_SERVER_URL}/api/afiliados`;
     const [email, setEmail] = useState("");
     const [nome, setNome] = useState("");

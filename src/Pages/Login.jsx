@@ -5,7 +5,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 
 export default function Login() {
-    useDocumentTitle('FIXY - LOGIN CLIENTE')
+    useDocumentTitle('FIXY - Login Cliente')
     const [email, setEmail] = useState("");
     const [senha, setSenha] = useState("");
     const [error, setError] = useState("");

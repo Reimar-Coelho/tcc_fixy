@@ -18,9 +18,6 @@ function Navbar() {
         else if (location.pathname.includes('/login')){
             return '/login'
         }
-        else if (location.pathname.includes('/perfil')){
-            return '/perfil'
-        }
         
         else {
             return '/escolhaLogin'
@@ -30,25 +27,26 @@ function Navbar() {
     return ( 
         <nav>
             <ul className='text-lg flex gap-3 ml-3 text-white flex-wrap'>
-                <li className={`${location.pathname === '/' ? 'border-b-2 px-2 border-yellow-500 text-yellow-500 hover:tracking-widest transition-all ' : 'border-b-2 px-2 border-yellow-500  hover:tracking-widest transition-all'}`}>
+                <li className={`${location.pathname === '/' ? 'border-b-2 px-2 border-yellow-500 text-yellow-500 hover:tracking-widest transition-all ' : ' px-2 border-yellow-500  hover:border-b-2 hover:tracking-widest hover:text-yellow-500 transition-all'}`}>
                     <Link to = "/">HOME</Link>
                 </li>
 
-                <li className={`${location.pathname === '/cliente' ? 'border-b-2 px-2 border-yellow-500 text-yellow-500 hover:tracking-widest transition-all ' : 'border-b-2 px-2 border-yellow-500  hover:tracking-widest transition-all'}`}>
+                <li className={`${location.pathname === '/cliente' ? 'border-b-2 px-2 border-yellow-500 text-yellow-500 hover:tracking-widest transition-all ' : ' px-2 border-yellow-500  hover:border-b-2 hover:tracking-widest hover:text-yellow-500 transition-all'}`}>
                     <Link to = "cliente">CLIENTE</Link></li>
 
-                <li className={`${location.pathname === '/afiliado' ? 'border-b-2 px-2 border-yellow-500 text-yellow-500 hover:tracking-widest transition-all ' : 'border-b-2 px-2 border-yellow-500 hover:tracking-widest transition-all'}`}>
+                <li className={`${location.pathname === '/afiliado' ? 'border-b-2 px-2 border-yellow-500 text-yellow-500 hover:tracking-widest transition-all ' : ' px-2 border-yellow-500  hover:border-b-2 hover:tracking-widest hover:text-yellow-500 transition-all'}`}>
                     <Link to = "afiliado">AFILIADO</Link>
                 </li>
-                <li className={`${location.pathname === '/loginParceiro' ? ' px-2 border-yellow-500 text-yellow-500 hover:tracking-widest transition-all ' : 'px-2 border-yellow-500 hover:tracking-widest transition-all'}`}>
+                <li className={`${location.pathname === '/loginParceiro' ? 'border-b-2 px-2 border-yellow-500 text-yellow-500 hover:tracking-widest transition-all ' : ' px-2 border-yellow-500  hover:border-b-2 hover:tracking-widest hover:text-yellow-500 transition-all'}`}>
                     <Link to = {getLoginPath()} className='flex items-center gap-2'>
                         
                         LOGIN
-                        <BsPersonCircle className='text-2xl text-yellow-500'/>
                     </Link>
                 </li>
-                <li className={`${location.pathname === '/perfil' ? 'border-b-2 px-2 border-yellow-500 text-yellow-500 hover:tracking-widest transition-all ' : 'border-b-2 px-2 border-yellow-500 hover:tracking-widest transition-all'}`}>
-                    <Link to = "perfil">PERFIL</Link>
+                <li className={`${location.pathname === '/perfil' ? 'px-2 border-yellow-500 text-yellow-500 hover:tracking-widest transition-all ' : 'px-2 border-yellow-500 hover:tracking-widest hover:text-yellow-500 transition-all'}`}>
+                    <Link to = "perfil" className='flex items-center gap-2'>PERFIL
+                    <BsPersonCircle className='text-2xl text-yellow-500'/>
+                    </Link>
                 </li>
             </ul>
         </nav>
