@@ -18,6 +18,9 @@ function Navbar() {
         else if (location.pathname.includes('/login')){
             return '/login'
         }
+        else if (location.pathname.includes('/perfil')){
+            return '/perfil'
+        }
         
         else {
             return '/escolhaLogin'
@@ -43,6 +46,9 @@ function Navbar() {
                         LOGIN
                         <BsPersonCircle className='text-2xl text-yellow-500'/>
                     </Link>
+                </li>
+                <li className={`${location.pathname === '/perfil' ? 'border-b-2 px-2 border-yellow-500 text-yellow-500 hover:tracking-widest transition-all ' : 'border-b-2 px-2 border-yellow-500 hover:tracking-widest transition-all'}`}>
+                    <Link to = "perfil">PERFIL</Link>
                 </li>
             </ul>
         </nav>

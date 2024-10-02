@@ -2,7 +2,9 @@ import loginImg from '../assets/login.png'
 import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 
+
 export default function Cadastro() {
+    
 
     const baseUrl = `${import.meta.env.VITE_SERVER_URL}/api/clientes`;
     const [email, setEmail] = useState("");

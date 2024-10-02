@@ -1,7 +1,8 @@
-
+import useDocumentTitle from '../hook/useDocumentTitle';
 import { Link } from 'react-router-dom'
 
 function Home() {
+    useDocumentTitle('FIXY - HOME');
     return (
         <main className="bg-black min-h-screen text-white">
             {/* Seção de Imagem Principal */}

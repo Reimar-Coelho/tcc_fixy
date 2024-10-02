@@ -1,46 +1,46 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
-import './index.css'
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App.jsx';
+import './index.css';
 
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-import PageNotFound from './Pages/PageNotFound.jsx'
-import Home from './Pages/Home.jsx'
-import Login from './Pages/Login.jsx'
-import Cliente from './Pages/Cliente.jsx'
-import Afiliado from './Pages/Afiliado.jsx'
-import LoginAfiliado from './Pages/LoginAfiliado.jsx'
-import EscolhaLogin from './Pages/EscolhaLogin.jsx'
-import Cadastro from './Pages/Cadastro.jsx'
-import CadastroAfiliado from './Pages/CadastroAfiliado.jsx'
-import Notes from './Pages/Notes.jsx'
-import AddNote from './Pages/add-note.jsx'
-import UpdateNote from './Pages/note.jsx'
+import PageNotFound from './Pages/PageNotFound.jsx';
+import Home from './Pages/Home.jsx';
+import Login from './Pages/Login.jsx';
+import Cliente from './Pages/Cliente.jsx';
+import Afiliado from './Pages/Afiliado.jsx';
+import LoginAfiliado from './Pages/LoginAfiliado.jsx';
+import EscolhaLogin from './Pages/EscolhaLogin.jsx';
+import Cadastro from './Pages/Cadastro.jsx';
+import CadastroAfiliado from './Pages/CadastroAfiliado.jsx';
+import Perfil from './Pages/Perfil.jsx';
 
+import Notes from './Pages/Notes.jsx';
+import AddNote from './Pages/add-note.jsx';
+import UpdateNote from './Pages/note.jsx';
 
-const router = createBrowserRouter(
-  [
+const router = createBrowserRouter([
     {
-      path: "/",
-      element: <App/>,
-      children: [
-        {index: true, element: <Home/> },
-        {path: "login", element: <Login/>},
-        {path: "cliente", element: <Cliente/>},
-        {path: "afiliado", element: <Afiliado/>},
-        {path: "loginParceiro", element: <LoginAfiliado/>},
-        {path: "escolhaLogin", element: <EscolhaLogin/>},
-        {path: "cadastro", element: <Cadastro/>},
-        {path: "cadastroParceiro", element: <CadastroAfiliado/>},
-        {path: "*", element: <PageNotFound/>}
-      ]
+        path: "/",
+        element: <App />,
+        children: [
+            { index: true, element: <Home /> },
+            { path: "login", element: <Login /> },
+            { path: "cliente", element: <Cliente /> },
+            { path: "afiliado", element: <Afiliado /> },
+            { path: "loginParceiro", element: <LoginAfiliado /> },
+            { path: "escolhaLogin", element: <EscolhaLogin /> },
+            { path: "cadastro", element: <Cadastro /> },
+            { path: "cadastroParceiro", element: <CadastroAfiliado /> },
+            { path: "perfil", element: <Perfil /> },
+            { path: "*", element: <PageNotFound /> }
+        ]
     }
-  ]
-)
+]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <RouterProvider router={router}/>
-  </React.StrictMode>,
-)
+    <React.StrictMode>
+        <RouterProvider router={router} />
+    </React.StrictMode>,
+);

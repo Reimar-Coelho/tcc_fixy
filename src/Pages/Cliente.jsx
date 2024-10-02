@@ -1,7 +1,10 @@
+
+import useDocumentTitle from '../hook/useDocumentTitle';
 import loginImg from '../assets/login.png'
 import { Link } from 'react-router-dom';
 
 function Cliente() {
+    useDocumentTitle('FIXY - CLIENTE');
     return (
         <main className="bg-black min-h-screen text-white">
             {/* Seção de Imagem Principal */}
