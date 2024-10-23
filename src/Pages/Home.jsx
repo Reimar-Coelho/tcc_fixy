@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 function Home() {
     useDocumentTitle('FIXY - HOME');
     return (
-        <main className="bg-black min-h-screen text-white">
+        <main className="bg-neutral-900 min-h-screen text-white">
             {/* Seção de Imagem Principal */}
             <section className="relative">
                 <img 
