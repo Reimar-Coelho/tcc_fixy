@@ -4,6 +4,7 @@ const express = require("express");
 const bcrypt = require("bcrypt");
 const connectDB = require("./connectDB");
 const Clientes = require("./models/Clientes");
+const Posts = require('./models/PostWork');
 
 const app = express();
 const PORT = process.env.PORT || 8000;
@@ -205,5 +206,112 @@ app.post("/api/afiliados/check-email", async (req, res) => {
         res.status(200).json({ exists: false });
     } catch (error) {
         res.status(500).json({ message: "Erro no servidor." });
+    }
+});
+
+
+//Posts
+
+// Get all Posts
+app.get("/api/posts", async (req, res) => {
+    try {
+        const data = await Posts.find({}).populate('afiliado', 'nome').populate('comentarios.clienteId', 'nome');
+
+        res.status(200).json(data);
+    } catch (error) {
+        res.status(500).json({ error: 'An error occurred' });
+    }
+});
+
+
+// Create a Post
+app.post("/api/posts", async (req, res) => {
+    try {
+        const { afiliado, conteudo } = req.body;
+
+        const post = await Posts.create({ afiliado, conteudo });
+
+        res.status(201).json(post);
+    } catch (error) {
+        res.status(500).json({ error: 'An error occurred', error });
+    }
+});
+
+// Update a Post
+app.put("/api/posts/:id", async (req, res) => {
+    try {
+        const postId = req.params.id;
+        const { conteudo } = req.body;
+
+        const post = await Posts.findByIdAndUpdate(postId, { conteudo }, { new: true });
+
+        if (!post) {
+            return res.status(404).json({ message: "Post not found." });
+        }
+
+        res.status(200).json(post);
+    } catch (error) {
+        res.status(500).json({ error: 'An error occurred' });
+    }
+});
+
+
+// Delete a Post by Id
+app.delete("/api/posts/:id", async (req, res) => {
+    try {
+        const postId = req.params.id;
+
+        const post = await Posts.findByIdAndDelete(postId);
+
+        if (!post) {
+            return res.status(404).json({ message: "Post not found." });
+        }
+
+        res.status(200).json({ message: "Post deleted successfully." });
+    } catch (error) {
+        res.status(500).json({ error: 'An error occurred' });
+    }
+});
+
+
+// Create a Comment on a Post
+app.post("/api/posts/:id/comentarios", async (req, res) => {
+    try {
+        const postId = req.params.id;
+        const { clienteId, conteudo } = req.body;
+
+        const post = await Posts.findById(postId);
+
+        if (!post) {
+            return res.status(404).json({ message: "Post not found." });
+        }
+
+        post.comentarios.push({ clienteId, conteudo });
+        await post.save();
+
+        res.status(201).json(post);
+    } catch (error) {
+        res.status(500).json({ error: 'An error occurred',details: error.mensage });
+    }
+});
+
+
+// Like a Post
+app.post("/api/posts/:id/curtir", async (req, res) => {
+    try {
+        const postId = req.params.id;
+
+        const post = await Posts.findById(postId);
+
+        if (!post) {
+            return res.status(404).json({ message: "Post not found." });
+        }
+
+        post.likes_count += 1;
+        await post.save();
+
+        res.status(200).json(post);
+    } catch (error) {
+        res.status(500).json({ error: 'An error occurred' });
     }
 });
