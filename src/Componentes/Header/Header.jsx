@@ -10,7 +10,7 @@ function Header() {
                     <img 
                         src="fixy (1).png" // Substitua pelo caminho exato da sua imagem
                         alt="Logo FIXY" 
-                        className="w-12 h-12 object-contain" // Ajuste o tamanho conforme desejado
+                        className="w-10 h-10 object-contain" // Ajuste o tamanho conforme desejado
                     />
                 </Link>
                 
