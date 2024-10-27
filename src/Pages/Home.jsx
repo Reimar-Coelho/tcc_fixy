@@ -1,22 +1,30 @@
 import useDocumentTitle from '../hook/useDocumentTitle';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 function Home() {
     useDocumentTitle('FIXY - HOME');
     return (
         <main className="bg-neutral-900 min-h-screen text-white">
-        {/* Seção de Imagem Principal */}
-        <section className="relative h-screen flex justify-center items-center">
-            <img 
-                src="cimento.jpg" 
-                alt="Background" 
-                className="absolute inset-0 w-full h-full object-cover opacity-80"
-            />
-            <div className="relative z-10 text-center">
-                <h1 className="text-white text-6xl font-bold">FIXY</h1>
-                <p className="text-yellow-500 text-xl mt-4">Nós facilitamos a conexão entre clientes e profissionais</p>
-            </div>
-        </section>
+            {/* Seção de Imagem Principal */}
+            <section className="relative h-screen flex justify-center items-center">
+                <img 
+                    src="cimento.jpg" 
+                    alt="Background" 
+                    className="absolute inset-0 w-full h-full object-cover opacity-50"
+                />
+                
+                {/* Conteúdo Centralizado */}
+                <div className="relative z-10 text-center">
+                    <img 
+                        src="fixy (4).png"  // Substitua pelo caminho correto da imagem
+                        alt="Logo FIXY" 
+                        className="w-1/3 max-w-xs mx-auto" // Ajuste o tamanho conforme necessário
+                    />
+                    <p className="text-yellow-500 text-xl mt-4">
+                        Facilitando a conexão entre clientes e profissionais
+                    </p>
+                </div>
+            </section>
 
             {/* Seção "Como Funciona" */}
             <section className="py-10 text-center">
