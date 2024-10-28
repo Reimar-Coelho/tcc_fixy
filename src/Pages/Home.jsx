@@ -2,6 +2,7 @@ import { useRef, useEffect } from 'react';
 import useDocumentTitle from '../hook/useDocumentTitle';
 import { Link } from 'react-router-dom';
 
+
 function Home() {
     useDocumentTitle('FIXY - HOME');
     
@@ -46,8 +47,6 @@ function Home() {
             alt="Logo FIXY" 
             className="w-2/4 max-w-xs mx-auto transform transition-transform duration-500 hover:scale-105"
         />
-        {/* Linha abaixo do logo */}
-    <div className="w-full h-1 bg-yellow-500 mx-auto mt-4"></div> {/* Linha */}
     
     <p className="text-white text-lg font-semibold mt-4">
         CONECTANDO CLIENTES E PRESTADORES COM EFICIÊNCIA
@@ -83,8 +82,8 @@ function Home() {
             <h3 className="text-2xl mb-4 text-yellow-500">Afiliado</h3>
             <p className="mb-6 text-gray-300">
                 Para o prestador, o processo é direto: ele cadastra suas 
-                habilidades e localização na Fixy. Quando um cliente solicita 
-                um serviço, a Fixy conecta as oportunidades compatíveis, 
+                habilidades e localização na FIXY. Quando um cliente solicita 
+                um serviço, a FIXY conecta as oportunidades compatíveis, 
                 facilitando a expansão de seus clientes e negócios.
             </p>
             <Link 
@@ -99,7 +98,7 @@ function Home() {
             <h3 className="text-2xl mb-4 text-yellow-500">Cliente</h3>
             <p className="mb-6 text-gray-300">
                 Para o cliente, é fácil: ele descreve o problema e informa sua 
-                localização no app da Fixy. A plataforma filtra e apresenta 
+                localização no serviço da FIXY. A plataforma filtra e apresenta 
                 pedreiros disponíveis para o trabalho, simplificando a busca 
                 por um profissional.
             </p>
@@ -115,24 +114,22 @@ function Home() {
 
             {/* Seção "Solicitação de serviço" */}
             <section className="py-10 text-center">
-                <h2 className="text-yellow-500 text-3xl mb-8">Solicitação de serviço</h2>
-                <div className="flex flex-col md:flex-row justify-center items-center space-y-6 md:space-y-0 md:space-x-6">
-                    <div className="text-left max-w-md">
-                        <p className="mb-4">
-                            Cadastre-se, descreva o seu problema e informe sua localização. 
-                            Nosso sistema filtrará pedreiros qualificados próximos de você, 
-                            facilitando a contratação do profissional ideal para suas necessidades.
-                        </p>
-                        <Link to="404" className="bg-yellow-500 hover:bg-yellow-400 transition-all text-black py-2 px-4">
-                            Solicitar um serviço
-                        </Link>
-                    </div>
-                    <img 
-                        src="pintor.jpg" 
-                        alt="Worker" 
-                        className="w-full md:w-1/3 h-96 object-cover bg-center opacity-80 rounded"
-                    />
-                </div>
+                <h2 className="text-yellow-500 text-3xl mb-8">Solicitação de serviços</h2>
+                <div className="bg-neutral-800 p-8 rounded-2xl shadow-lg transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl w-80 flex flex-col justify-between">
+            <h3 className="text-2xl mb-4 text-yellow-500">Cliente</h3>
+            <p className="mb-6 text-gray-300">
+                Para o cliente, é fácil: ele descreve o problema e informa sua 
+                localização no serviço da FIXY. A plataforma filtra e apresenta 
+                pedreiros disponíveis para o trabalho, simplificando a busca 
+                por um profissional.
+            </p>
+            <Link 
+                to="cliente" 
+                className="bg-yellow-500 text-black py-2 px-4 hover:bg-transparent hover:tracking-widest hover:border-2 hover:border-yellow-500 hover:text-yellow-500 transition-all self-center"
+            >
+                VEJA MAIS
+            </Link>
+        </div> 
             </section>
         </main>
     );

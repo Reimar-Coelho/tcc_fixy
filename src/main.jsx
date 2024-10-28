@@ -16,10 +16,6 @@ import Cadastro from './Pages/Cadastro.jsx';
 import CadastroAfiliado from './Pages/CadastroAfiliado.jsx';
 import Perfil from './Pages/Perfil.jsx';
 
-import Notes from './Pages/Notes.jsx';
-import AddNote from './Pages/add-note.jsx';
-import UpdateNote from './Pages/note.jsx';
-
 const router = createBrowserRouter([
     {
         path: "/",

@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 function Header() {
     return ( 
         <header className="absolute top-0 left-0 w-full text-white p-3 z-50">
-            <div className="flex flex-row items-center justify-between mx-7">
-                {/* Substituindo o texto por uma imagem */}
+            <div className="flex flex-row items-center justify-between ml-3 mr-7">
+                {/* Logo */}
                 <Link to="/" className="flex items-center">
                     <img 
                         src="fixy (1).png" // Substitua pelo caminho exato da sua imagem
