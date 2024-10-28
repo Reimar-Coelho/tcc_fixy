@@ -15,5 +15,6 @@
   ::-webkit-scrollbar-thumb {
     background: #ffba24;
     border-radius:25px;
+    scroll-behavior: smooth;
   }
   

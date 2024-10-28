@@ -2,7 +2,7 @@ import useDocumentTitle from '../hook/useDocumentTitle';
 
 
 function Perfil() {
-    useDocumentTitle('FIXY - HOME');
+    useDocumentTitle('FIXY - PERFIL');
 
     const profileImage = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQikAW3pXN5YXgfLgdGesoC6uPKXkpEsbeSpA&s"; // Link da imagem de perfil
     const nome = "Seu Nome"; // Nome padrão
