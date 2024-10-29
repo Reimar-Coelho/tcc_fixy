@@ -4,7 +4,7 @@ import useDocumentTitle from '../hook/useDocumentTitle';
 function Afiliado() {
     useDocumentTitle('FIXY - Afiliado')
     return (
-        <main className="bg-black min-h-screen text-white">
+        <main className="bg-neutral-900 min-h-screen text-white">
             {/* Seção de Imagem Principal */}
             <section className="relative">
                 <img 
@@ -13,7 +13,7 @@ function Afiliado() {
                     className="w-full h-96 object-cover opacity-80"
                 />
                 <div className="absolute top-0 left-0 w-full h-full flex justify-center items-center">
-                    <h1 className="text-4xl font-bold text-white">Afiliados</h1>
+                    <h1 className="text-4xl font-bold text-white">Profissionais</h1>
                 </div>
             </section>
 
@@ -24,25 +24,25 @@ function Afiliado() {
                     Nosso sistema foi criado para conectar pedreiros qualificados com clientes que precisam de serviços em sua área. Ao se cadastrar, você terá acesso a uma plataforma que facilita a oferta de seus serviços e a comunicação direta com os clientes.
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mx-10">
-                    <div className="bg-gray-800 p-6 rounded-lg shadow-md">
+                    <div className="bg-neutral-800 p-6 rounded-lg shadow-md">
                         <h3 className="text-2xl mb-4">Filtragem</h3>
                         <p className="mb-4">
                             Nosso sistema combina suas especialidades e localização com as necessidades dos clientes, enviando apenas solicitações relevantes para você.
                         </p>
                     </div>
-                    <div className="bg-gray-800 p-6 rounded-lg shadow-md">
+                    <div className="bg-neutral-800 p-6 rounded-lg shadow-md">
                         <h3 className="text-2xl mb-4">Garantia</h3>
                         <p className="mb-4">
                             Oferecemos uma política de garantia para assegurar a qualidade dos serviços prestados, cobrindo possíveis problemas de execução ou qualidade.
                         </p>
                     </div>
-                    <div className="bg-gray-800 p-6 rounded-lg shadow-md">
+                    <div className="bg-neutral-800 p-6 rounded-lg shadow-md">
                         <h3 className="text-2xl mb-4">Chat</h3>
                         <p className="mb-4">
                             Você poderá se comunicar diretamente com os clientes através de mensagens instantâneas para esclarecer dúvidas e agendar serviços.
                         </p>
                     </div>
-                    <div className="bg-gray-800 p-6 rounded-lg shadow-md">
+                    <div className="bg-neutral-800 p-6 rounded-lg shadow-md">
                         <h3 className="text-2xl mb-4">Avaliação</h3>
                         <p className="mb-4">
                             Os clientes podem avaliar seus serviços ao final de cada trabalho. Isso ajuda a manter a qualidade dos serviços e aumenta a sua reputação na plataforma.

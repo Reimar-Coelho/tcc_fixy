@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 function Cliente() {
     useDocumentTitle('FIXY - Cliente');
     return (
-        <main className="bg-black min-h-screen text-white">
+        <main className="bg-neutral-900 min-h-screen text-white">
             {/* Seção de Imagem Principal */}
             <section className="relative">
                 <img 
