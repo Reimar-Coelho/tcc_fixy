@@ -11,9 +11,9 @@ import Login from './Pages/Login.jsx';
 import Cliente from './Pages/Cliente.jsx';
 import Afiliado from './Pages/Afiliado.jsx';
 import LoginAfiliado from './Pages/LoginAfiliado.jsx';
-import EscolhaLogin from './Pages/EscolhaLogin.jsx';
+
 import Cadastro from './Pages/Cadastro.jsx';
-import CadastroAfiliado from './Pages/CadastroAfiliado.jsx';
+
 import Perfil from './Pages/Perfil.jsx';
 
 const router = createBrowserRouter([
@@ -26,9 +26,9 @@ const router = createBrowserRouter([
             { path: "cliente", element: <Cliente /> },
             { path: "afiliado", element: <Afiliado /> },
             { path: "loginParceiro", element: <LoginAfiliado /> },
-            { path: "escolhaLogin", element: <EscolhaLogin /> },
+
             { path: "cadastro", element: <Cadastro /> },
-            { path: "cadastroParceiro", element: <CadastroAfiliado /> },
+
             { path: "perfil", element: <Perfil /> },
             { path: "*", element: <PageNotFound /> }
         ]

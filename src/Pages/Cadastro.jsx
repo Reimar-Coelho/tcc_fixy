@@ -1,11 +1,10 @@
-import loginImg from '../assets/login.png'
-import { useNavigate } from 'react-router-dom'
-import { useState } from 'react'
-
+import useDocumentTitle from '../hook/useDocumentTitle';
+import signinImg from '../assets/cadastro.jpg';
+import { useNavigate, Link } from 'react-router-dom';
+import { useState } from 'react';
 
 export default function Cadastro() {
-    
-
+    useDocumentTitle('FIXY - Cadastro');
     const baseUrl = `${import.meta.env.VITE_SERVER_URL}/api/clientes`;
     const [email, setEmail] = useState("");
     const [nome, setNome] = useState("");
@@ -18,13 +17,8 @@ export default function Cadastro() {
 
     const navigate = useNavigate();
 
-    const validateEmail = (email) => {
-        return /\S+@\S+\.\S+/.test(email);
-    }
-
-    const validatePassword = (senha) => {
-        return /^(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$/.test(senha);
-    }
+    const validateEmail = (email) => /\S+@\S+\.\S+/.test(email);
+    const validatePassword = (senha) => /^(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$/.test(senha);
 
     const checkEmailExists = async (email) => {
         try {
@@ -42,7 +36,7 @@ export default function Cadastro() {
         }
     }
 
-    const addCliente = async(e) => {
+    const addCliente = async (e) => {
         e.preventDefault();
 
         if (!email || !nome || !endereco || !cidade || !senha) {
@@ -68,70 +62,83 @@ export default function Cadastro() {
 
         setError("");
 
-        try{
+        try {
             const response = await fetch(baseUrl, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
                     email, nome, endereco, complemento, cidade, senha
                 }),
-            })
+            });
 
-            if(response.ok) {
-                setSubmitted(true)
-                setTimeout(() => {setSubmitted(false); navigate("/")}, 2000);
-            }
-            else {
-                console.log("Failed to submit data.")
+            if (response.ok) {
+                setSubmitted(true);
+                setTimeout(() => {
+                    setSubmitted(false);
+                    navigate("/");
+                }, 2000);
+            } else {
+                console.log("Failed to submit data.");
             }
 
-        } catch(error){
-            console.log(error); 
+        } catch (error) {
+            console.log(error);
         }
     }
 
     return (
-        <div className='grid grid-cols-1 sm:grid-cols-2 h-screen w-full'>
-            <div className='hidden sm:block'>
-                <img className='w-full h-full object-cover scale-x-[-1]' src={loginImg} alt="" />
-            </div>
-    
-            <div className='bg-black flex flex-col justify-center'>
-                <form className='max-w-[400px] w-full mx-auto rounded-lg bg-gray-900 p-8 px-8' onSubmit={addCliente}>
-                    <h2 className='text-4xl text-yellow-500 font-bold text-center'>CADASTRO CLIENTE</h2>
-                    
-                    <div className='flex flex-col text-gray-400 py-2'>
-                        <label>Email</label>
-                        <input className='rounded-lg bg-gray-700 mt-2 p-2 focus:border-blue-500 focus:bg-gray-800 focus:outline-none' type="email" value={email} onChange={(e) => setEmail(e.target.value)}/>
+        <div
+            className="h-screen w-full flex items-center justify-center bg-cover bg-center relative"
+            style={{ backgroundImage: `url(${signinImg})` }}
+        >
+            <div className="absolute inset-0 bg-black opacity-60"></div>
+
+            <div className="relative z-10 max-w-[400px] w-full rounded-lg bg-neutral-900 p-8 px-8">
+                <h2 className="text-4xl text-yellow-500 font-semibold text-center">CADASTRO</h2>
+                {error && <p className='text-red-500 text-center'>{error}</p>}
+
+                <form onSubmit={addCliente}>
+                    {["Email", "Nome completo", "Endereço", "Complemento", "Cidade", "Senha"].map((label, index) => (
+                        <div key={index} className='flex flex-col text-gray-400 py-2'>
+                            <label className="text-yellow-500">{label}</label>
+                            <input
+                                className='rounded-lg bg-neutral-700 mt-2 p-2 focus:border-blue-500 focus:bg-neutral-800 focus:outline-none'
+                                type={label === "Senha" ? "password" : "text"}
+                                value={label === "Email" ? email : label === "Nome completo" ? nome : label === "Endereço" ? endereco : label === "Complemento" ? complemento : label === "Cidade" ? cidade : senha}
+                                onChange={(e) =>
+                                    label === "Email" ? setEmail(e.target.value) :
+                                    label === "Nome completo" ? setNome(e.target.value) :
+                                    label === "Endereço" ? setEndereco(e.target.value) :
+                                    label === "Complemento" ? setComplemento(e.target.value) :
+                                    label === "Cidade" ? setCidade(e.target.value) :
+                                    setSenha(e.target.value)
+                                }
+                            />
+                        </div>
+                    ))}
+
+                    <button
+                        type="submit"
+                        disabled={submitted}
+                        className='w-full my-5 py-2 bg-yellow-500 shadow-lg shadow-yellow-500/50 hover:shadow-yellow-500/50 hover:bg-transparent hover:border-2 hover:border-yellow-500 hover:text-yellow-500 hover:tracking-widest transition-all text-white font-semibold rounded-lg'
+                    >
+                        {submitted ? "Registrando usuário..." : "REGISTRAR"}
+                    </button>
+
+                    {submitted && (
+                        <div className='w-full my-3 py-1 bg-green-500 shadow-lg shadow-green-500/50 text-white font-semibold rounded-lg text-center'>
+                            Usuário criado com sucesso
+                        </div>
+                    )}
+
+                    <div className="flex justify-center text-neutral-400 py-2">
+                        <p className="flex items-center">Já tem conta? /</p>
+                        <Link to="/login" className="text-yellow-500 ml-1 hover:underline">
+                            Faça Login
+                        </Link>
                     </div>
-                    <div className='flex flex-col text-gray-400 py-2'>
-                        <label>Nome completo</label>
-                        <input className='p-2 rounded-lg bg-gray-700 mt-2 focus:border-blue-500 focus:bg-gray-800 focus:outline-none' type="text" value={nome} onChange={(e) => setNome(e.target.value)}/>
-                    </div>
-                    <div className='flex flex-col text-gray-400 py-2'>
-                        <label>Endereço</label>
-                        <input className='p-2 rounded-lg bg-gray-700 mt-2 focus:border-blue-500 focus:bg-gray-800 focus:outline-none' type="text" value={endereco} onChange={(e) => setEndereco(e.target.value)}/>
-                    </div>
-                    <div className='flex flex-col text-gray-400 py-2'>
-                        <label>Complemento</label>
-                        <input className='p-2 rounded-lg bg-gray-700 mt-2 focus:border-blue-500 focus:bg-gray-800 focus:outline-none' type="text" value={complemento} onChange={(e) => setComplemento(e.target.value)}/>
-                    </div>
-                    <div className='flex flex-col text-gray-400 py-2'>
-                        <label>Cidade</label>
-                        <input className='p-2 rounded-lg bg-gray-700 mt-2 focus:border-blue-500 focus:bg-gray-800 focus:outline-none' type="text" value={cidade} onChange={(e) => setCidade(e.target.value)}/>
-                    </div>
-                    <div className='flex flex-col text-gray-400 py-2'>
-                        <label>Senha</label>
-                        <input className='p-2 rounded-lg bg-gray-700 mt-2 focus:border-blue-500 focus:bg-gray-800 focus:outline-none' type="password" value={senha} onChange={(e) => setSenha(e.target.value)}/>
-                    </div>
-                    {error && <p className='text-red-500 text-center mt-2'>{error}</p>}
-                    <input type="submit" value={submitted ? "Registrando usuário..." : "REGISTRAR"} disabled={submitted} className='w-full my-5 py-2 bg-yellow-500 shadow-lg shadow-yellow-500/50 hover:shadow-yellow-500/40 text-white font-semibold rounded-lg'/>
-                    <p className='text-center'>
-                        {submitted && <div className='w-full my-3 py-1 bg-green-500 shadow-lg shadow-green-500/50 hover:shadow-green-500/40 text-white font-semibold rounded-lg'>Usuário criado com sucesso</div>}
-                    </p>
-                    
                 </form>
             </div>
         </div>
-      )
+    );
 }

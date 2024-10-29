@@ -55,7 +55,7 @@ function Home() {
 
                 {/* Passo 3: Ícone da Seta com onClick */}
                 <div className="absolute bottom-16 text-yellow-500 text-sm font-semibold">
-                    "Enter" para ver mais
+                    Pressione &quot;Enter&quot;
                 </div>
                 <div
                     onClick={scrollToSection}
@@ -74,12 +74,19 @@ function Home() {
             </div>
 </section>
 
+<section ref={targetSectionRef} className="py-10 text-center">
+    <h2 className="text-yellow-500 text-3xl mb-8 font-semibold">O que é a FIXY?</h2>
+    <div className="flex flex-col md:flex-row justify-center items-stretch space-y-6 md:space-y-0 md:space-x-10">
+        Focando na segurança e confiabilidade, a FIXY é uma plataforma que conecta clientes a prestadores de serviços, com 
+    </div>
+</section>
+
             {/* Seção "Como Funciona" com referência */}
  <section ref={targetSectionRef} className="py-10 text-center">
-    <h2 className="text-yellow-500 text-3xl mb-8">Como Funciona</h2>
+    <h2 className="text-yellow-500 text-3xl mb-8 font-semibold">Como Funciona</h2>
     <div className="flex flex-col md:flex-row justify-center items-stretch space-y-6 md:space-y-0 md:space-x-10">
         <div className="bg-neutral-800 p-8 rounded-2xl shadow-lg transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl w-80 flex flex-col justify-between">
-            <h3 className="text-2xl mb-4 text-yellow-500">Afiliado</h3>
+            <h3 className="text-2xl     mb-4 text-yellow-500 font-semibold">Prestador de Serviço</h3>
             <p className="mb-6 text-gray-300">
                 Para o prestador, o processo é direto: ele cadastra suas 
                 habilidades e localização na FIXY. Quando um cliente solicita 
@@ -95,7 +102,7 @@ function Home() {
         </div>
 
         <div className="bg-neutral-800 p-8 rounded-2xl shadow-lg transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl w-80 flex flex-col justify-between">
-            <h3 className="text-2xl mb-4 text-yellow-500">Cliente</h3>
+            <h3 className="text-2xl mb-4 text-yellow-500 font-semibold">Cliente</h3>
             <p className="mb-6 text-gray-300">
                 Para o cliente, é fácil: ele descreve o problema e informa sua 
                 localização no serviço da FIXY. A plataforma filtra e apresenta 
@@ -113,10 +120,12 @@ function Home() {
 </section>
 
             {/* Seção "Solicitação de serviço" */}
-            <section className="py-10 text-center">
-                <h2 className="text-yellow-500 text-3xl mb-8">Solicitação de serviços</h2>
-                <div className="bg-neutral-800 p-8 rounded-2xl shadow-lg transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl w-80 flex flex-col justify-between">
-            <h3 className="text-2xl mb-4 text-yellow-500">Cliente</h3>
+<section className="py-10 text-center">
+    <h2 className="text-yellow-500 text-3xl mb-8 font-semibold">Solicitação de serviços</h2>
+        <div className="flex flex-col md:flex-row justify-center items-stretch space-y-6 md:space-y-0 md:space-x-10">
+                
+        <div className="bg-neutral-800 p-8 rounded-2xl shadow-lg transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl w-80 flex flex-col justify-between">
+            <h3 className="text-2xl mb-4 text-yellow-500 font-semibold">Montagem de Móveis</h3>
             <p className="mb-6 text-gray-300">
                 Para o cliente, é fácil: ele descreve o problema e informa sua 
                 localização no serviço da FIXY. A plataforma filtra e apresenta 
@@ -127,9 +136,60 @@ function Home() {
                 to="cliente" 
                 className="bg-yellow-500 text-black py-2 px-4 hover:bg-transparent hover:tracking-widest hover:border-2 hover:border-yellow-500 hover:text-yellow-500 transition-all self-center"
             >
-                VEJA MAIS
+                ORÇAMENTO
             </Link>
         </div> 
+        <div className="bg-neutral-800 p-8 rounded-2xl shadow-lg transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl w-80 flex flex-col justify-between">
+            <h3 className="text-2xl mb-4 text-yellow-500 font-semibold">Mudanças</h3>
+            <p className="mb-6 text-gray-300">
+                Para o cliente, é fácil: ele descreve o problema e informa sua 
+                localização no serviço da FIXY. A plataforma filtra e apresenta 
+                pedreiros disponíveis para o trabalho, simplificando a busca 
+                por um profissional.
+            </p>
+            <Link 
+                to="cliente" 
+                className="bg-yellow-500 text-black py-2 px-4 hover:bg-transparent hover:tracking-widest hover:border-2 hover:border-yellow-500 hover:text-yellow-500 transition-all self-center"
+            >
+                ORÇAMENTO
+            </Link>
+        </div> 
+        <div className="bg-neutral-800 p-8 rounded-2xl shadow-lg transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl w-80 flex flex-col justify-between">
+            <h3 className="text-2xl mb-4 text-yellow-500 font-semibold">Pedreiro</h3>
+            <p className="mb-6 text-gray-300">
+                Para o cliente, é fácil: ele descreve o problema e informa sua 
+                localização no serviço da FIXY. A plataforma filtra e apresenta 
+                pedreiros disponíveis para o trabalho, simplificando a busca 
+                por um profissional.
+            </p>
+            <Link 
+                to="cliente" 
+                className="bg-yellow-500 text-black py-2 px-4 hover:bg-transparent hover:tracking-widest hover:border-2 hover:border-yellow-500 hover:text-yellow-500 transition-all self-center"
+            >
+                ORÇAMENTO
+            </Link>
+        </div> 
+    </div>
+            </section>
+
+    <section className="py-10 text-center">
+    <div className="flex flex-col md:flex-row justify-center items-stretch space-y-6 md:space-y-0 md:space-x-10">
+        <div className="bg-neutral-800 p-8 rounded-2xl shadow-lg transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl w-80 flex flex-col justify-between">
+            <h3 className="text-2xl mb-4 text-yellow-500 font-semibold">Pintura</h3>
+            <p className="mb-6 text-gray-300">
+                Para o cliente, é fácil: ele descreve o problema e informa sua 
+                localização no serviço da FIXY. A plataforma filtra e apresenta 
+                pedreiros disponíveis para o trabalho, simplificando a busca 
+                por um profissional.
+            </p>
+            <Link 
+                to="cliente" 
+                className="bg-yellow-500 text-black py-2 px-4 hover:bg-transparent hover:tracking-widest hover:border-2 hover:border-yellow-500 hover:text-yellow-500 transition-all self-center"
+            >
+                ORÇAMENTO
+            </Link>
+        </div>
+    </div>
             </section>
         </main>
     );

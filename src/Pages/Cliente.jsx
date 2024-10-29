@@ -26,25 +26,25 @@ function Cliente() {
                     Nosso site facilita a conexão entre você e pedreiros qualificados. Aqui, você pode descrever o serviço necessário, encontrar profissionais especializados próximos à sua localização e se comunicar diretamente com eles de forma simples e segura.
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mx-10">
-                    <div className="bg-gray-800 p-6 rounded-lg shadow-md">
+                    <div className="bg-neutral-800 p-6 rounded-lg shadow-md">
                         <h3 className="text-2xl mb-4">Filtragem</h3>
                         <p className="mb-4">
                             Descreva seu problema e informe sua localização. Nosso sistema irá filtrar pedreiros com as especialidades necessárias que estão próximos a você, facilitando a escolha do profissional ideal.
                         </p>
                     </div>
-                    <div className="bg-gray-800 p-6 rounded-lg shadow-md">
+                    <div className="bg-neutral-800 p-6 rounded-lg shadow-md">
                         <h3 className="text-2xl mb-4">Garantia</h3>
                         <p className="mb-4">
                             Nossa política de garantia assegura que o serviço prestado tenha a qualidade esperada, cobrindo eventuais problemas de execução.
                         </p>
                     </div>
-                    <div className="bg-gray-800 p-6 rounded-lg shadow-md">
+                    <div className="bg-neutral-800 p-6 rounded-lg shadow-md">
                         <h3 className="text-2xl mb-4">Chat</h3>
                         <p className="mb-4">
                             Comunique-se diretamente com o pedreiro selecionado através do sistema de mensagens, isso permite esclarecer dúvidas e agendar serviços de forma prática e segura.
                         </p>
                     </div>
-                    <div className="bg-gray-800 p-6 rounded-lg shadow-md">
+                    <div className="bg-neutral-800 p-6 rounded-lg shadow-md">
                         <h3 className="text-2xl mb-4">Avaliação</h3>
                         <p className="mb-4">
                             Após o serviço, você pode avaliar o pedreiro. Essas avaliações são fundamentais para manter a qualidade dos profissionais, ajudando outros clientes a fazer escolhas informadas.
