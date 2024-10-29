@@ -163,58 +163,65 @@ function Home() {
                             ORÇAMENTO
                         </Link>
                     </div> 
-                    <div className="bg-neutral-800 p-8 rounded-2xl shadow-lg transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl w-80 flex flex-col justify-between">
-                        <h3 className="text-2xl mb-4 text-yellow-500 font-semibold">Mudanças</h3>
-                        <p className="mb-6 text-gray-300">
-                            Para o cliente, é fácil: ele descreve o problema e informa sua 
-                            localização no serviço da FIXY. A plataforma filtra e apresenta 
-                            pedreiros disponíveis para o trabalho, simplificando a busca 
-                            por um profissional.
-                        </p>
-                        <Link 
-                            to="cliente" 
-                            className="bg-yellow-500 text-black py-2 px-4 hover:bg-transparent hover:tracking-widest hover:border-2 hover:border-yellow-500 hover:text-yellow-500 transition-all self-center"
-                        >
-                            ORÇAMENTO
-                        </Link>
-                    </div> 
-                    <div className="bg-neutral-800 p-8 rounded-2xl shadow-lg transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl w-80 flex flex-col justify-between">
-                        <h3 className="text-2xl mb-4 text-yellow-500 font-semibold">Pedreiro</h3>
-                        <p className="mb-6 text-gray-300">
-                            Para o cliente, é fácil: ele descreve o problema e informa sua 
-                            localização no serviço da FIXY. A plataforma filtra e apresenta 
-                            pedreiros disponíveis para o trabalho, simplificando a busca 
-                            por um profissional.
-                        </p>
-                        <Link 
-                            to="cliente" 
-                            className="bg-yellow-500 text-black py-2 px-4 hover:bg-transparent hover:tracking-widest hover:border-2 hover:border-yellow-500 hover:text-yellow-500 transition-all self-center"
-                        >
-                            ORÇAMENTO
-                        </Link>
-                    </div> 
-                </div>
-            </section>
-
+                    <div className="relative rounded-xl overflow-hidden w-80 mx-auto shadow-lg transition-transform duration-300 hover:scale-105">
+      {/* Caminho para a imagem na pasta public */}
+      <img src="/mudança.jpg" alt="Mudanças" className="w-full h-full object-cover transition-opacity duration-300 hover:opacity-60"/>
+      
+      
+      <div className="absolute inset-0 bg-black bg-opacity-30 hover:bg-opacity-50 flex flex-col justify-between p-6 text-white transition-all">
+        
+        <h3 className="text-2xl mb-4 text-yellow-500 font-semibold">Mudanças</h3>
+        <p className="text-gray-300 mb-4">
+          Para o cliente, é fácil: ele descreve o problema e informa sua localização...
+        </p>
+        <Link 
+            to="cliente" className="bg-yellow-500 text-black py-2 px-4 hover:bg-transparent hover:tracking-widest hover:border-2 hover:border-yellow-500 hover:text-yellow-500 transition-all self-center">ORÇAMENTO
+        </Link>
+      </div>
+      
+</div>
+<div className="relative rounded-xl overflow-hidden w-80 mx-auto shadow-lg transition-transform duration-300 hover:scale-105">
+      {/* Caminho para a imagem na pasta public */}
+      <img src="/pedreiro.jpg" alt="Pedreiro" className="w-full h-full object-cover transition-opacity duration-300 hover:opacity-60"/>
+      
+      
+      <div className="absolute inset-0 bg-black bg-opacity-30 hover:bg-opacity-50 flex flex-col justify-between p-6 text-white transition-all">
+        
+        <h3 className="text-2xl mb-4 text-yellow-500 font-semibold">Pedreiro</h3>
+        <p className="text-gray-300 mb-4">
+          Para o cliente, é fácil: ele descreve o problema e informa sua localização...
+        </p>
+        <Link 
+            to="cliente" className="bg-yellow-500 text-black py-2 px-4 hover:bg-transparent hover:tracking-widest hover:border-2 hover:border-yellow-500 hover:text-yellow-500 transition-all self-center">ORÇAMENTO
+        </Link>
+      </div>
+      
+</div>
+</div>
+</section>
             <section className="py-10 text-center">
-                <div className="flex flex-col md:flex-row justify-center items-stretch space-y-6 md:space-y-0 md:space-x-10">
-                    <div className="bg-neutral-800 p-8 rounded-2xl shadow-lg transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl w-80 flex flex-col justify-between">
-                        <h3 className="text-2xl mb-4 text-yellow-500 font-semibold">Pintura</h3>
-                        <p className="mb-6 text-gray-300">
-                            Para o cliente, é fácil: ele descreve o problema e informa sua 
-                            localização no serviço da FIXY. A plataforma filtra e apresenta 
-                            pedreiros disponíveis para o trabalho, simplificando a busca 
-                            por um profissional.
-                        </p>
-                        <Link 
-                            to="cliente" 
-                            className="bg-yellow-500 text-black py-2 px-4 hover:bg-transparent hover:tracking-widest hover:border-2 hover:border-yellow-500 hover:text-yellow-500 transition-all self-center"
-                        >
-                            ORÇAMENTO
-                        </Link>
-                    </div>
-                </div>
-            </section>
+  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-6 justify-center">
+    <div className="relative rounded-xl overflow-hidden w-80 mx-auto shadow-lg transition-transform duration-300 hover:scale-105">
+      {/* Caminho para a imagem na pasta public */}
+      <img src="/1pintor.jpg" alt="Pintura" className="w-full h-full object-cover transition-opacity duration-300 hover:opacity-60"/>
+      
+      
+      <div className="absolute inset-0 bg-black bg-opacity-30 hover:bg-opacity-50 flex flex-col justify-between p-6 text-white">
+        
+        <h3 className="text-2xl mb-4 text-yellow-500 font-semibold">Pintura</h3>
+        <p className="text-gray-300 mb-4">
+          Para o cliente, é fácil: ele descreve o problema e informa sua localização...
+        </p>
+        <Link to="cliente" className="bg-yellow-500 text-black py-2 px-4 rounded transition-all hover:bg-transparent hover:border-2 hover:border-yellow-500 hover:text-yellow-500 self-center">
+          ORÇAMENTO
+        </Link>
+      </div>
+      
+    </div>
+    {/* Repita o card para outros serviços, mudando o caminho da imagem se necessário */}
+  </div>
+</section>
+
         </main>
     );
 }
